@@ -7,7 +7,7 @@ function App() {
   const [answer, setAnswer] = useState("");
   const [score, setScore] = useState(0);
   const [error, setError] = useState(false);
-  const winScore = 2;
+  const winScore = 10;
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
