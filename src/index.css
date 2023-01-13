@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;600&display=swap');
+
+*,::after,::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  background: rgb(194, 230, 250);
+  font-size: 1.6rem;
+  font-family: 'Sofia Sans', sans-serif;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main{
+  background: #49C5B6;
+  color: #fff;
+  padding: 3rem;
+  min-width: 40rem;
+}
+button{
+  border: none;
+  outline: none;
+  padding: 1rem 3rem;
+  background: #DF6C4F;
+  color: #fff;
+  text-transform: uppercase;
+    font-family: inherit;
+    margin-top: 2rem;
+}
+button.restart{
+  background: green;
+  margin: 1rem auto;
+  display: flex;
+}
+input.answer{
+  border: none;
+  padding: 1rem;
+  font-family: inherit;
+  outline: none;
+}
+input::placeholder{
+  color: grey;
+  font-size: 1.6rem;
+}
+h1{
+  color: #c53511;
+  padding-bottom: 2rem;
+}
+h2{
+font-weight: 600;
+  padding-bottom: 1rem;
+}
+h3{
+  color: rgb(246, 246, 180);
+    padding-bottom: 1rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+.error{
+  color: #cd1111;
+  font-size: 1.4rem;
+  padding-left: 1rem;
+}
+button:disabled{
+filter: brightness(80%);
+}
