@@ -1,13 +1,40 @@
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import cat from "./svg/cat.svg";
+import bird from "./svg/bird.svg";
+import dog from "./svg/dog.svg";
+import cow from "./svg/cow.svg";
+import horse from "./svg/horse.svg";
+import gator from "./svg/gator.svg";
+import heart from "./svg/heart.svg";
 
+const svgImgs = {
+  cat,
+  bird,
+  horse,
+  cow,
+  gator,
+  dog,
+};
+
+const animalArray = ["cat", "dog", "horse", "cow", "gator", "bird"];
 function App() {
   const [num, setNum] = useState(Math.ceil(Math.random() * 10));
   const [num2, setNum2] = useState(Math.ceil(Math.random() * 10));
   const [answer, setAnswer] = useState("");
   const [score, setScore] = useState(0);
   const [error, setError] = useState(false);
-  const winScore = 10;
+  const winScore = 2;
+  const [animalSelect, setAnimalSelect] = useState(
+    animalArray[Math.floor(Math.random() * animalArray.length)]
+  );
+
+  const [animalClick, setAnimalClick] = useState(0);
+
+  const onClickAnimalHandler = () => {
+    console.log("clicked", animalClick);
+    setAnimalClick((prev) => prev + 1);
+  };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -62,6 +89,24 @@ function App() {
         {score >= winScore && (
           <>
             <Confetti width={window.innerWidth} height={window.innerHeight} />
+            <h3>You got a present.</h3>
+            <div className="gift" onClick={onClickAnimalHandler}>
+              <img
+                className="animals"
+                src={svgImgs[animalSelect]}
+                alt="animal"
+              />
+              <img
+                className="heart"
+                src={heart}
+                alt="heart"
+                style={{
+                  width: animalClick * 4 + `px`,
+                  height: animalClick * 4 + `px`,
+                }}
+              />
+            </div>
+
             <button className="restart" onClick={onRestart}>
               Restart
             </button>

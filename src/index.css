@@ -79,3 +79,24 @@ form{
 button:disabled{
 filter: brightness(80%);
 }
+.gift{
+  position: relative;
+  display: inline-block;
+}
+.animals{
+  width: 8rem;
+  height: 8rem;
+}
+.heart{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  bottom: 0rem;
+  right: -0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.heart:hover{
+  width: 4rem;
+  height: 4rem;
+}
